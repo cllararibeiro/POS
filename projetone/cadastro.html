@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+
+    button {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    #modalCadastro {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-conteudo {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .modal-header {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+    }
+
+    .modal-footer {
+      margin-top: 15px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Lista de Tarefas</h1>
+
+  <table id="tabelaTarefas">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Concluído</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Tarefas vão aparecer aqui -->
+    </tbody>
+  </table>
+
+  <button onclick="abrirModal()">Cadastrar Tarefa</button>
+
+  <!-- Modal de Cadastro -->
+  <div id="modalCadastro">
+    <div class="modal-conteudo">
+      <div class="modal-header">Cadastrar Nova Tarefa</div>
+  
+      <div class="form-group">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo">
+      </div>
+  
+      <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao">
+      </div>
+  
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="concluido"> Concluído
+        </label>
+      </div>
+  
+      <div class="modal-footer">
+        <button onclick="fecharModal()">Cancelar</button>
+        <button id="btnSalvar">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
